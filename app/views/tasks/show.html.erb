@@ -1,0 +1,13 @@
+
+<div class="container">
+<h1><%= @task.title %></h1>
+<div>
+<%= link_to("Edit this task", edit_task_path) %>
+<p><%=@task.details%></p>
+</div>
+<p><%= "This task is #{@state}" %></p>
+
+<%= link_to tasks_path do %>
+  <i class="fa-solid fa-rotate-left"></i> Back to list
+<% end %>
+</div>

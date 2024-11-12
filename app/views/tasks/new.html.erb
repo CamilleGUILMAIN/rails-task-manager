@@ -1,0 +1,23 @@
+<div class="container">
+
+<h1>New task</h1>
+<div class="w-100">
+<%= form_with model: @task do |f| %>
+<div class="d-flex justify-content-between py-2">
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+<div lass="d-flex justify-content-between py-2">
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+</div>
+<div class="py-2">
+  <%= f.submit %>
+</div>
+
+<% end %>
+</div>
+<%= link_to tasks_path do %>
+  <i class="fa-solid fa-rotate-left"></i> Back to list
+<% end %>
+</div>

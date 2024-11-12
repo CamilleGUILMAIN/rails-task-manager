@@ -1,0 +1,3 @@
+[1mCould not find generator 'change'. ([1;4mRails::Command::CorrectableNameError[m[1m)[m
+[1mDid you mean?  channel[m
+Run `bin/rails generate --help` for more options.

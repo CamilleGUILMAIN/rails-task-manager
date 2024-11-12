@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>My tasks</h1>
+  <div class="py-3">
+    <ul>
+      <% @tasks.each do |task| %>
+
+
+        <li class="list-unstyled">
+          <% if task.completed %>
+
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+              <label class="form-check-label" for="flexCheckDefault">
+                <%= link_to task.title, task_path(task) %>
+                <%=link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  <i class="fa-solid fa-trash"></i>
+                <% end %>
+              </label>
+
+          <% else %>
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  <%= link_to task.title, task_path(task) %>
+                  <%=link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                    <i class="fa-solid fa-trash"></i>
+                  <% end %>
+                </label>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="py-3 my-3 border-top">
+    <%= link_to new_task_path do %>
+    <i class="fa-solid fa-plus"></i> Add a new task
+    <% end %>
+  </div>
+</div>
